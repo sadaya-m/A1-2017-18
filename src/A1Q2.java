@@ -61,6 +61,7 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         l = numlist.readLine();
         
         while(l != null){
+            System.out.println(l);
             list[count] = Integer.parseInt(l);
             count++;
             l = numlist.readLine();
