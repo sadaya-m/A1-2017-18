@@ -49,7 +49,7 @@ public class A1Q1
     // ***** processing *****
         
         for(int i = 0; i < 10; i++){
-            rnd = random.nextInt(100)+1;    //process a random variable
+            rnd = random.nextInt(3)+1;    //process a random variable
             list[i] = rnd;                  //set random variable as list[i]
         }//end for loop random variable processing
 

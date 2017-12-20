@@ -27,7 +27,10 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
     // ***** declaration of variables *****
         
         int count = 0;
+        int freqCount = 0;
+                
         int list[] = new int [MAXLISTSIZE];
+        int freq[] = new int [4];
         
         String l;
         
@@ -45,7 +48,7 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         }
         catch(FileNotFoundException e){
             JOptionPane.showMessageDialog(null,"file not found");
-}
+        }
         
 
     // ***** Print Banner *****
@@ -61,18 +64,26 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         l = numlist.readLine();
         
         while(l != null){
-            System.out.println(l);
+            //System.out.println(l);
             list[count] = Integer.parseInt(l);
             count++;
             l = numlist.readLine();
-        }
+        }//end eof loop   
         
     // ***** processing *****
-
+        
+        for(int i = 0; i < list.length; i++){
+            ++freq[list[i]];    //+freq increments 1 everytime it lands in list[i]
+        }//end for loop
+        
+        
         
     // ***** output *****
+        
+        for(int i = 1; i<freq.length; i++){
+            System.out.println(freq[i]);
+        }//end for loop
 
-       //System.out.println(list);
         
     // ***** closing message *****
 
