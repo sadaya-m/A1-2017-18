@@ -29,10 +29,11 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         int count = 0;
         int freqCount = 0;
                 
-        int list[] = new int [MAXLISTSIZE];
+        int list[] = new int [MAXLISTSIZE];         
         int freq[] = new int [4];
         
         String l;
+        String strin;
         
         BufferedReader numlist = null;
 
@@ -76,12 +77,19 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
             ++freq[list[i]];    //+freq increments 1 everytime it lands in list[i]
         }//end for loop
         
+        strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
+        int n = Integer.parseInt(strin);
         
+        while(n != -1){
+            System.out.println(freq[n]);        //print the freq of the number the user wants
+            n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of?"));
+        }//end while loop
         
     // ***** output *****
         
+        System.out.println("\nNumber" +"    "+"Frequency");
         for(int i = 1; i<freq.length; i++){
-            System.out.println(freq[i]);
+            System.out.println(i+"          "+freq[i]);    //print frequency of each number
         }//end for loop
 
         
