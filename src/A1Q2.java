@@ -27,13 +27,15 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
     // ***** declaration of variables *****
         
         int count = 0;
-        int freqCount = 0;
+        int n1;
+        int n2;
                 
         int list[] = new int [MAXLISTSIZE];         
         int freq[] = new int [4];
         
         String l;
         String strin;
+        String delim = "[ -]+";         // delimiter for parsing input strings
         
         BufferedReader numlist = null;
 
@@ -77,13 +79,23 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
             ++freq[list[i]];    //+freq increments 1 everytime it lands in list[i]
         }//end for loop
         
-        strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
+        /*strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
         int n = Integer.parseInt(strin);
         
         while(n != -1){
             System.out.println(freq[n]);        //print the freq of the number the user wants
             n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of?"));
-        }//end while loop
+        }//end while loop*/
+        
+        strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)");
+        //n1 = Integer.parseInt(strin);
+        
+        String[] tokens = strin.split(delim);          //split tokens
+        int firstR = Integer.parseInt(tokens[0]);
+        int secondR = Integer.parseInt(tokens[1]);
+        for(int i = firstR; i < secondR+1; i++){
+            System.out.println(freq[i]);       
+        }//end for loop
         
     // ***** output *****
         
