@@ -26,15 +26,15 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         
     // ***** declaration of variables *****
         
-        int count = 0;
-        int n1;
-        int n2;
+        int count = 0;          //counter
+        int n;                  //number
+        int n1;                 //number 1
                 
-        int list[] = new int [MAXLISTSIZE];         
-        int freq[] = new int [4];
+        int list[] = new int [MAXLISTSIZE];         //list array that will store the numbers
+        int freq[] = new int [4];                   //freq array that will count frequency
         
-        String l;
-        String strin;
+        String l;               //string
+        String strin;               //string
         String delim = "[ -]+";         // delimiter for parsing input strings
         
         BufferedReader numlist = null;
@@ -87,15 +87,23 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
             n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of?"));
         }//end while loop*/
         
-        strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)");
-        //n1 = Integer.parseInt(strin);
+        strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)"); //do 0-0 to terminate program
+        String[] split = strin.split(delim);          //split tokens
+        n = Integer.parseInt(split[0]);
+        n1 = Integer.parseInt(split[1]);
         
-        String[] tokens = strin.split(delim);          //split tokens
-        int firstR = Integer.parseInt(tokens[0]);
-        int secondR = Integer.parseInt(tokens[1]);
-        for(int i = firstR; i < secondR+1; i++){
-            System.out.println(freq[i]);       
-        }//end for loop
+        while(n != 0){
+            String[] tokens = strin.split(delim);          //split tokens
+            int firstR = Integer.parseInt(tokens[0]);
+            int secondR = Integer.parseInt(tokens[1]);
+            for(int i = firstR; i < secondR+1; i++){
+                System.out.println(i + "\t" + freq[i]);       
+            }//end for loop
+            
+            strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)");
+            n = Integer.parseInt(tokens[0]);
+            n1 = Integer.parseInt(tokens[1]);
+        }//end while loop
         
     // ***** output *****
         
