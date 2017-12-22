@@ -25,7 +25,7 @@ public class A1Q1
 
     // ***** declaration of variables *****
 
-        int list[] = new int[10];           //declare max array size
+        int list[] = new int[1000];           //declare max array size
         int rnd;                    //random int
         
     // ***** create objects **********
@@ -48,16 +48,16 @@ public class A1Q1
 
     // ***** processing *****
         
-        for(int i = 0; i < 10; i++){
-            rnd = random.nextInt(3)+1;    //process a random variable
-            list[i] = rnd;                  //set random variable as list[i]
+        for(int i = 0; i < list.length; i++){
+            rnd = random.nextInt(100)+1;    //process random numbers from 1-100
+            list[i] = rnd;                  //set random number as list[i]
         }//end for loop random variable processing
 
     // ***** output *****
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < list.length; i++){
             numlist.println(list[i]);
-        }//end for loop random variable processing
+        }//end for loop random variable printing to text file
         
     // ***** closing message *****
 

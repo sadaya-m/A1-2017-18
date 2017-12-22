@@ -2,7 +2,7 @@
 //  Programmer:         Ma Pauline Sadaya
 //  Class:		CS30S
 //
-//  Assignment:         aX qy
+//  Assignment:         Assignment1
 //
 //  Description:	a brief description of the program goes here
 //
@@ -16,13 +16,14 @@ import javax.swing.*;
 import java.text.DecimalFormat;
 import java.io.*;
 
-public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
+public class A1Q2
 {  // begin class
     public static void main(String args[]) throws IOException
     {  // begin main
     // ***** declaration of constants *****
         
-        final int MAXLISTSIZE = 10;
+        final int MAXLISTSIZE = 1000;            //max array size
+        final int MAXNUMBERS = 1000;             //max value of numbers
         
     // ***** declaration of variables *****
         
@@ -31,7 +32,7 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         int n1;                 //number 1
                 
         int list[] = new int [MAXLISTSIZE];         //list array that will store the numbers
-        int freq[] = new int [4];                   //freq array that will count frequency
+        int freq[] = new int [MAXNUMBERS];                   //freq array that will count frequency
         
         String l;               //string
         String strin;               //string
@@ -51,15 +52,15 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
         }
         catch(FileNotFoundException e){
             JOptionPane.showMessageDialog(null,"file not found");
-        }
+        }//end try catch
         
 
     // ***** Print Banner *****
 
         System.out.println("**********************************");
-        System.out.println("NAME:        Your Name Here");
+        System.out.println("NAME:        Ma. Pauline Sadaya");
         System.out.println("Class:       CS30S");
-        System.out.println("Assignment:  Ax Qy");
+        System.out.println("Assignment:  Assignment1");
         System.out.println("**********************************");
 
     // ***** get input *****
@@ -79,26 +80,27 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
             ++freq[list[i]];    //+freq increments 1 everytime it lands in list[i]
         }//end for loop
         
-        /*strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
-        int n = Integer.parseInt(strin);
+        strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
+        n = Integer.parseInt(strin);            //parse strin to int
         
         while(n != -1){
             System.out.println(freq[n]);        //print the freq of the number the user wants
             n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of?"));
-        }//end while loop*/
+        }//end while loop*
+        
         
         strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)"); //do 0-0 to terminate program
         String[] split = strin.split(delim);          //split tokens
-        n = Integer.parseInt(split[0]);
-        n1 = Integer.parseInt(split[1]);
+        n = Integer.parseInt(split[0]);                 //parse to get first number
+        n1 = Integer.parseInt(split[1]);            //parse to get second number
         
         while(n != 0){
             String[] tokens = strin.split(delim);          //split tokens
-            int firstR = Integer.parseInt(tokens[0]);
+            int firstR = Integer.parseInt(tokens[0]);          
             int secondR = Integer.parseInt(tokens[1]);
             for(int i = firstR; i < secondR+1; i++){
                 System.out.println(i + "\t" + freq[i]);       
-            }//end for loop
+            }//end for loop to get the first number and second number (the range)
             
             strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)");
             n = Integer.parseInt(tokens[0]);
@@ -108,7 +110,7 @@ public class A1Q2/*CHANGE THIS TO THE NAME OF THE FILE*/
     // ***** output *****
         
         System.out.println("\nNumber" +"    "+"Frequency");
-        for(int i = 1; i<freq.length; i++){
+        for(int i = 1; i<=100; i++){
             System.out.println(i+"          "+freq[i]);    //print frequency of each number
         }//end for loop
 
