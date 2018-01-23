@@ -25,8 +25,8 @@ public class A1Q1
 
     // ***** declaration of variables *****
 
-        int list[] = new int[1000];           //declare max array size
-        int rnd;                    //random int
+        int rndList;
+        int rnd;
         
     // ***** create objects **********
 
@@ -48,6 +48,11 @@ public class A1Q1
 
     // ***** processing *****
         
+        //rndList = random.nextInt(1000 - 950)+950;    //process random numbers from 950-1000
+        int list[] = new int[1000];           //declare max array size
+        //System.out.println(rndList);
+        
+        
         for(int i = 0; i < list.length; i++){
             rnd = random.nextInt(100)+1;    //process random numbers from 1-100
             list[i] = rnd;                  //set random number as list[i]
@@ -63,7 +68,6 @@ public class A1Q1
 
         System.out.println("end of processing");
 
-        numlist.println();
         numlist.close();
 	}  // end main	
 }  // end class

@@ -80,20 +80,22 @@ public class A1Q2
             ++freq[list[i]];    //+freq increments 1 everytime it lands in list[i]
         }//end for loop
         
-        strin = JOptionPane.showInputDialog("What number do you want to know the frequency of?");
+        strin = JOptionPane.showInputDialog("What number do you want to know the frequency of? [0 to terminate program]");
         n = Integer.parseInt(strin);            //parse strin to int
         
-        while(n != -1){
-            System.out.println(freq[n]);        //print the freq of the number the user wants
-            n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of?"));
+        System.out.println("\nNumber Chosen\tFrequency");
+        while(n != 0){
+            System.out.println(n+"\t\t"+freq[n]);        //print the freq of the number the user wants
+            n = Integer.parseInt(JOptionPane.showInputDialog("What number do you want to know the frequency of? [0 to terminate program]"));
         }//end while loop*
         
         
-        strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)"); //do 0-0 to terminate program
+        strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)[0 to terminate program]"); //do 0-0 to terminate program
         String[] split = strin.split(delim);          //split tokens
         n = Integer.parseInt(split[0]);                 //parse to get first number
         n1 = Integer.parseInt(split[1]);            //parse to get second number
         
+        System.out.println("\nNumber\tFrequency");
         while(n != 0){
             String[] tokens = strin.split(delim);          //split tokens
             int firstR = Integer.parseInt(tokens[0]);          
@@ -102,16 +104,16 @@ public class A1Q2
                 System.out.println(i + "\t" + freq[i]);       
             }//end for loop to get the first number and second number (the range)
             
-            strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number)");
+            strin = JOptionPane.showInputDialog("What range of numbers do you want to know the frequency of? (number-number) [0-0 to terminate program]");
             n = Integer.parseInt(tokens[0]);
             n1 = Integer.parseInt(tokens[1]);
         }//end while loop
         
     // ***** output *****
         
-        System.out.println("\nNumber" +"    "+"Frequency");
+        System.out.println("\nNumber\t"+"Frequency");
         for(int i = 1; i<=100; i++){
-            System.out.println(i+"          "+freq[i]);    //print frequency of each number
+            System.out.println(i+"\t"+freq[i]);    //print final frequency of each number
         }//end for loop
 
         
